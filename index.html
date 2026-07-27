@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Tree</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="tree-container">
+        
+        <!-- ==========================================
+             COMO CRIAR UM PONTO NA ÁRVORE:
+             Copie o bloco <div class="skill-node"> inteiro.
+             Altere o ícone, o nome e o conteúdo dentro de "skill-description".
+        =========================================== -->
+
+        <!-- PONTO 1 -->
+        <div class="skill-node">
+            <div class="icon">⚔️</div>
+            <div class="name">Golpe Pesado</div>
+            
+            <!-- DESCRIÇÃO CUSTOMIZADA (Aceita Rich Text/HTML) -->
+            <div class="skill-description">
+                <h2>⚔️ Golpe Pesado</h2>
+                <p>Um ataque concentrado que causa <strong>150% de dano físico</strong> base.</p>
+                <ul>
+                    <li><span style="color: #ff4d4d;">Dano:</span> 45 - 60</li>
+                    <li><span style="color: #4da6ff;">Custo de Mana:</span> 15</li>
+                    <li><span style="color: #ffd44d;">Tempo de Recarga:</span> 3s</li>
+                </ul>
+                <p><em>"A força bruta resolve a maioria dos problemas."</em></p>
+            </div>
+        </div>
+
+        <!-- Conector Visual -->
+        <div class="connector"></div>
+
+        <!-- PONTO 2 -->
+        <div class="skill-node">
+            <div class="icon">🔥</div>
+            <div class="name">Ignio</div>
+            
+            <!-- DESCRIÇÃO CUSTOMIZADA -->
+            <div class="skill-description">
+                <h2>🔥 Ignio (Magia)</h2>
+                <p>Dispara uma bola de fogo que queima os inimigos ao longo do tempo.</p>
+                <div style="background: #2a0808; padding: 10px; border-left: 4px solid #ff4d4d; border-radius: 4px;">
+                    <strong>Efeito Passivo:</strong> Inimigos atingidos perdem 5% da armadura.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- TELA ESCURA E JANELA FLUTUANTE (MODAL) -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-box">
+            <button id="close-btn" class="close-btn">&times;</button>
+            <!-- O conteúdo da habilidade clicada aparecerá aqui dentro -->
+            <div id="modal-content" class="modal-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
