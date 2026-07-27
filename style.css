@@ -1,0 +1,133 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container da Árvore */
+.tree-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 40px;
+}
+
+/* Pontos (Nós) da Árvore */
+.skill-node {
+    background: #1e1e2e;
+    border: 2px solid #3a3a52;
+    border-radius: 12px;
+    padding: 15px 30px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.skill-node:hover {
+    border-color: #6c5ce7;
+    background: #2a2a40;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(108, 92, 231, 0.4);
+}
+
+.icon {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 16px;
+    color: #a29bfe;
+}
+
+/* Ocultar a descrição dentro do botão (ela só aparece no modal) */
+.skill-description {
+    display: none;
+}
+
+/* Linhas Conectoras */
+.connector {
+    width: 4px;
+    height: 40px;
+    background-color: #3a3a52;
+}
+
+/* =========================================
+   SISTEMA DE MODAL (Tela Escura)
+========================================= */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Fundo escuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+/* Ativa o modal */
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-box {
+    background: #1a1a24;
+    border: 1px solid #4a4a6a;
+    border-radius: 8px;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-box {
+    transform: translateY(0);
+}
+
+/* Botão de Fechar */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 28px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #fff;
+}
+
+/* Formatação do Rich Text no Modal */
+.modal-content h2 { margin-bottom: 15px; color: #fff; border-bottom: 1px solid #333; padding-bottom: 5px; }
+.modal-content p { margin-bottom: 10px; line-height: 1.5; color: #ccc; }
+.modal-content ul { margin-left: 20px; margin-bottom: 15px; color: #bbb; }
+.modal-content li { margin-bottom: 5px; }
